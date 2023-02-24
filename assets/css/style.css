@@ -74,7 +74,6 @@ header.navbar-container .nav-list li:hover a {
   font-weight: bold;
 }
 
-/* Hamburger Menu */
 .menu-toggle {
   justify-items: center;
   display: none;
@@ -105,21 +104,17 @@ header.navbar-container .nav-list li:hover a {
   transition: all 0.5s;
 }
 
-/* Hamburger Menu Animation */
 .menu-toggle span:nth-child(2) {
   transform-origin: 0 0;
-  /* membuat poros di ujung garis kiri */
 }
 
 .menu-toggle span:nth-child(4) {
   transform-origin: 0 100%;
-  /* membuat poros di ujung garis kanan */
 }
 
 .menu-toggle input:checked ~ span:nth-child(2) {
   background-color: #ffb84c;
   transform: rotate(45deg) translate(-1px, -1px);
-  /*agar sejajar*/
 }
 
 .menu-toggle input:checked ~ span:nth-child(4) {
@@ -512,29 +507,37 @@ footer {
   .menu-toggle {
     display: flex;
     top: 0;
+    position: relative;
+    align-self: center;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: space-around;
   }
 
   .nav-list ul {
     box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.2);
     display: flex;
-    position: absolute;
+    position: fixed;
     margin: 0;
     padding: 0;
     right: -100%;
-    top: 0;
+    top: 60px;
     width: 80%;
-    height: 100vh;
+    height: calc(100vh - 60px);
     flex-direction: column;
     align-items: center;
     background-color: #a459d1;
     z-index: 1;
     transition: all 1000ms;
     opacity: 0;
+    justify-content: space-around;
   }
 
   .nav-list ul li {
-    margin-top: 0;
-    justify-content: center;
+    margin: 0;
+    padding: 0;
   }
 
   .nav-list ul li:hover {
@@ -542,7 +545,7 @@ footer {
   }
 
   .nav-list ul li:nth-child(1) {
-    margin-top: 40px;
+    margin-top: 10px;
   }
 
   nav ul.slide {
